@@ -1,23 +1,46 @@
-import './App.css';
-import logo from './logo.svg';
+import { useState } from 'react';
 
 export default function App() {
+  const [topText, setTopText] = useState('');
+  const [bottomText, setBottomText] = useState('');
+  const url = 'https://api.memegen.link/images/aag';
+  const imageUrl = `${url}${topText}${bottomText}.png`;
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <label>
+        Top text
+        <br />
+        <input
+          onChange={(event) => setTopText('/' + event.currentTarget.value)}
+        />
+      </label>
+      <br />
+      <label>
+        Bottom text
+        <br />
+        <input
+          onChange={(event) => setBottomText('/' + event.currentTarget.value)}
+        />
+      </label>
+      <br />
+      <label>
+        Meme Template:
+        <br />
+        <input />
+      </label>
+      <br />
+      <br />
+      <img data-test-id="meme-image" alt="meme" src={imageUrl} />
+      <br />
+      <br />
+      <a
+        href={imageUrl}
+        download="meme"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        <button>Download</button>
+      </a>
+    </>
   );
 }
