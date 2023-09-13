@@ -42,13 +42,8 @@ export default function App() {
       <img data-test-id="meme-image" alt="meme" src={imageUrl} />
       <br />
       <br />
-      <a
-        href={imageUrl}
-        download="meme"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        <button>Download</button>
+      <a href={imageUrl} download>
+        Download
       </a>
     </>
   );
