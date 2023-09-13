@@ -17,7 +17,7 @@ export default function App() {
   const memeIndex = findMemeIndexById(memeId);
 
   const url = memeIndex !== -1 ? arr[memeIndex].blank : ''; // Check if memeIndex is valid
-  const imageUrl = `${url.slice(0, -4)}/${topText}/${bottomText}`;
+  const imageUrl = `${url.slice(0, -4)}/${topText}/${bottomText}.png`;
   return (
     <>
       <label>
