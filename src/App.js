@@ -1,32 +1,41 @@
 import { useState } from 'react';
+import { arr } from './template.js';
 
+function findMemeIndexById(idToFind) {
+  for (let i = 0; i < arr.length; i++) {
+    if (arr[i].id === idToFind) {
+      return i; // Return the index where the id is found
+    }
+  }
+  return -1; // Return -1 if the id is not found
+}
 export default function App() {
-  const [topText, setTopText] = useState('');
-  const [bottomText, setBottomText] = useState('');
-  const url = 'https://api.memegen.link/images/aag';
-  const imageUrl = `${url}${topText}${bottomText}.png`;
+  const [topText, setTopText] = useState('Top Text');
+  const [bottomText, setBottomText] = useState('Bottom Text');
+  const [memeId, setMemeId] = useState('aag'); // Default meme ID
+
+  const memeIndex = findMemeIndexById(memeId);
+
+  const url = memeIndex !== -1 ? arr[memeIndex].blank : ''; // Check if memeIndex is valid
+  const imageUrl = `${url.slice(0, -4)}/${topText}/${bottomText}`;
   return (
     <>
       <label>
         Top text
         <br />
-        <input
-          onChange={(event) => setTopText('/' + event.currentTarget.value)}
-        />
+        <input onChange={(event) => setTopText(event.currentTarget.value)} />
       </label>
       <br />
       <label>
         Bottom text
         <br />
-        <input
-          onChange={(event) => setBottomText('/' + event.currentTarget.value)}
-        />
+        <input onChange={(event) => setBottomText(event.currentTarget.value)} />
       </label>
       <br />
       <label>
         Meme Template:
         <br />
-        <input />
+        <input onChange={(event) => setMemeId(event.currentTarget.value)} />
       </label>
       <br />
       <br />
