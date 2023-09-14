@@ -4,19 +4,19 @@ import { arr } from './template.js';
 function findMemeIndexById(idToFind) {
   for (let i = 0; i < arr.length; i++) {
     if (arr[i].id === idToFind) {
-      return i; // Return the index where the id is found
+      return i;
     }
   }
-  return -1; // Return -1 if the id is not found
+  return -1;
 }
 export default function App() {
-  const [topText, setTopText] = useState('Top Text');
-  const [bottomText, setBottomText] = useState('Bottom Text');
-  const [memeId, setMemeId] = useState('aag'); // Default meme ID
+  const [topText, setTopText] = useState(' ');
+  const [bottomText, setBottomText] = useState(' ');
+  const [memeId, setMemeId] = useState('aag');
 
   const memeIndex = findMemeIndexById(memeId);
 
-  const url = memeIndex !== -1 ? arr[memeIndex].blank : ''; // Check if memeIndex is valid
+  const url = memeIndex !== -1 ? arr[memeIndex].blank : '';
   const imageUrl = `${url.slice(0, -4)}/${topText}/${bottomText}.png`;
   return (
     <>
