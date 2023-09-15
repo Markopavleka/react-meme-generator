@@ -30,9 +30,9 @@ export default function App() {
       <div>
         <label htmlFor="top text">
           Top text
-          <br />
           <input
             name="top text"
+            id="top-text"
             onChange={(event) => setTopText(event.currentTarget.value)}
           />
         </label>
