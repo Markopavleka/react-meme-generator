@@ -59,7 +59,9 @@ export default function App() {
         />
       </div>
       <br />
-      <button onClick={downloadImage}>Download</button>
+      <button type="Download" onClick={downloadImage}>
+        Download
+      </button>
       <br />
       <img data-test-id="meme-image" alt="meme" src={imageUrl()} />
       <br />
