@@ -14,10 +14,89 @@ body {
     'Helvetica Neue',
     sans-serif;
   height: 100vh;
-  color: #ed6a5a;
+  color: black;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  position: relative;
+}
+
+.Phone {
+  height: 70vh;
+  width: 40vh;
+  background-color: black;
+  border-radius: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: inherit;
+}
+
+.Screen {
+  height: 68vh;
+  width: 38vh;
+  border-radius: 35px;
+  background-color: whitesmoke;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  overflow: hidden;
+  margin-bottom: 0px;
+  position: relative;
+}
+
+.Notch {
+  background-color: black;
+  height: 3vh;
+  width: 15vh;
+  border-radius: 0 0 20px 20px;
+  position: absolute; /* Position it relative to the .Screen div */
+  top: 0; /* Position it at the top of the .Screen div */
+  left: 50%; /* Center horizontally within .Screen */
+  transform: translateX(-50%); /* Center horizontally */
+  overflow: hidden;
+  margin-top: 0;
+  z-index: 2; /* Make sure it's above the image */
+}
+
+img {
+  height: 30vh;
+  width: 20vw;
+  z-index: 1;
+  border-radius: 30px;
+  overflow: hidden;
+  margin-top: 25px;
+  margin-bottom: 18px;
 }
 
 input {
-  appearance: none;
-  -webkit-appearance: none;
+  height: 20px;
+  border-radius: 5px;
+  border: 1px solid #36c9c6;
+}
+input:focus {
+  color: white;
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  box-shadow: 100px white;
+  background-color: rgba(243, 240, 240, 0.818);
+}
+input:hover {
+  background-color: rgba(54, 201, 198, 0.5);
+  border-color: white;
+}
+button {
+  height: 42px;
+  width: 107px;
+  font-size: 1rem;
+  border-radius: 25px;
+  border: 2px solid #36c9c6;
+  background-color: #36c9c6;
+  color: rgba(248, 248, 248, 0.8);
+}
+button:hover {
+  background-color: white;
+  color: #36c9c6;
+  cursor: pointer;
+  overflow: hidden;
 }

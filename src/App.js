@@ -32,10 +32,12 @@ export default function App() {
   };
 
   return (
-    <>
-      <div>
+    <div className="Phone">
+      <div className="Screen">
+        <div className="Notch" />
+        <img data-test-id="meme-image" alt="meme" src={imageUrl()} />
+
         <label htmlFor="top text">Top text</label>
-        <br />
         <input
           name="top text"
           id="top text"
@@ -43,7 +45,7 @@ export default function App() {
         />
         <br />
         <label htmlFor="bottom text">Bottom text</label>
-        <br />
+
         <input
           name="bottom text"
           id="bottom text"
@@ -51,20 +53,17 @@ export default function App() {
         />
         <br />
         <label htmlFor="Meme template">Meme template</label>
-        <br />
+
         <input
           name="Meme template"
           id="Meme template"
           onChange={(event) => setMemeId(event.currentTarget.value)}
         />
+        <br />
+        <button type="Download" onClick={downloadImage}>
+          Download
+        </button>
       </div>
-      <br />
-      <button type="Download" onClick={downloadImage}>
-        Download
-      </button>
-      <br />
-      <img data-test-id="meme-image" alt="meme" src={imageUrl()} />
-      <br />
-    </>
+    </div>
   );
 }
