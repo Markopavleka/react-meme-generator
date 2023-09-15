@@ -28,28 +28,22 @@ export default function App() {
   return (
     <>
       <div>
-        <label htmlFor="top text">
-          Top text
-          <input onChange={(event) => setTopText(event.currentTarget.value)} />
-        </label>
+        <label htmlFor="top text">Top text</label>
+        <input onChange={(event) => setTopText(event.currentTarget.value)} />
         <br />
-        <label htmlFor="bottom text">
-          Bottom text
-          <br />
-          <input
-            name="bottom text"
-            onChange={(event) => setBottomText(event.currentTarget.value)}
-          />
-          <br />
-          <label htmlFor="meme template">
-            Meme Template
-            <br />
-            <input
-              name="meme template"
-              onChange={(event) => setMemeId(event.currentTarget.value)}
-            />
-          </label>
-        </label>
+        <label htmlFor="bottom text">Bottom text</label>
+        <br />
+        <input
+          name="bottom text"
+          onChange={(event) => setBottomText(event.currentTarget.value)}
+        />
+        <br />
+        <label htmlFor="meme template">Meme Template</label>
+        <br />
+        <input
+          name="meme template"
+          onChange={(event) => setMemeId(event.currentTarget.value)}
+        />
       </div>
       <br />
       <a href={imageUrl()} download>
