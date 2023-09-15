@@ -43,7 +43,7 @@ export default function App() {
           onChange={(event) => setBottomText(event.currentTarget.value)}
         />
         <br />
-        <label htmlFor="meme template">Meme Template</label>
+        <label htmlFor="meme template">Meme template</label>
         <br />
         <input
           name="meme template"
