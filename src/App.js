@@ -11,8 +11,8 @@ function findMemeIndexById(idToFind) {
   return -1;
 }
 export default function App() {
-  const [topText, setTopText] = useState(' ');
-  const [bottomText, setBottomText] = useState(' ');
+  const [topText, setTopText] = useState('');
+  const [bottomText, setBottomText] = useState('');
   const [memeId, setMemeId] = useState('aag');
 
   const memeIndex = findMemeIndexById(memeId);
@@ -27,24 +27,31 @@ export default function App() {
   };
   return (
     <>
-      <div className="input">
-        <label>
+      <div>
+        <label htmlFor="Top text">
           Top text
           <br />
-          <input onChange={(event) => setTopText(event.currentTarget.value)} />
+          <input
+            name="Top text"
+            onChange={(event) => setTopText(event.currentTarget.value)}
+          />
         </label>
         <br />
-        <label>
+        <label htmlFor="Bottom text">
           Bottom text
           <br />
           <input
+            name="Bottom text"
             onChange={(event) => setBottomText(event.currentTarget.value)}
           />
           <br />
-          <label>
-            Meme Template:
+          <label htmlFor="Meme Template">
+            Meme Template
             <br />
-            <input onChange={(event) => setMemeId(event.currentTarget.value)} />
+            <input
+              name="Meme Template"
+              onChange={(event) => setMemeId(event.currentTarget.value)}
+            />
           </label>
         </label>
       </div>
