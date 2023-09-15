@@ -53,7 +53,7 @@ export default function App() {
       </div>
       <br />
       <a href={imageUrl()} download>
-        Download
+        <button>Download</button>
       </a>
       <br />
       <img data-test-id="meme-image" alt="meme" src={imageUrl()} />
