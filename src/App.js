@@ -43,11 +43,11 @@ export default function App() {
           onChange={(event) => setBottomText(event.currentTarget.value)}
         />
         <br />
-        <label htmlFor="meme template">Meme template</label>
+        <label htmlFor="Meme template">Meme template</label>
         <br />
         <input
-          name="meme template"
-          id="meme template"
+          name="Meme template"
+          id="Meme template"
           onChange={(event) => setMemeId(event.currentTarget.value)}
         />
       </div>
