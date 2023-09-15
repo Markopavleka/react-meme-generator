@@ -1,3 +1,4 @@
+import './app.css';
 import { useState } from 'react';
 import { arr } from './template.js';
 
@@ -17,34 +18,44 @@ export default function App() {
   const memeIndex = findMemeIndexById(memeId);
 
   const url = memeIndex !== -1 ? arr[memeIndex].blank : '';
-  const imageUrl = `${url.slice(0, -4)}/${topText}/${bottomText}.png`;
+  const imageUrl = function () {
+    if (topText < 1) {
+      return `${url.slice(0, -4)}/_/${bottomText}.png`;
+    } else {
+      return `${url.slice(0, -4)}/${topText}/${bottomText}.png`;
+    }
+  };
   return (
     <>
-      <label>
-        Top text
+      <div className="input">
+        <label>
+          Top text
+          <br />
+          <input onChange={(event) => setTopText(event.currentTarget.value)} />
+        </label>
         <br />
-        <input onChange={(event) => setTopText(event.currentTarget.value)} />
-      </label>
+        <label>
+          Bottom text
+          <br />
+          <input
+            onChange={(event) => setBottomText(event.currentTarget.value)}
+          />
+          <br />
+          <label>
+            Meme Template:
+            <br />
+            <input onChange={(event) => setMemeId(event.currentTarget.value)} />
+          </label>
+        </label>
+      </div>
       <br />
-      <label>
-        Bottom text
-        <br />
-        <input onChange={(event) => setBottomText(event.currentTarget.value)} />
-      </label>
-      <br />
-      <label>
-        Meme Template:
-        <br />
-        <input onChange={(event) => setMemeId(event.currentTarget.value)} />
-      </label>
-      <br />
-      <br />
-      <img data-test-id="meme-image" alt="meme" src={imageUrl} />
-      <br />
-      <br />
-      <a href={imageUrl} download>
+      <a href={imageUrl()} download>
         Download
       </a>
+      <br />
+      <img data-test-id="meme-image" alt="meme" src={imageUrl()} />
+      <br />
+      <br />
     </>
   );
 }
