@@ -28,28 +28,28 @@ export default function App() {
   return (
     <>
       <div>
-        <label htmlFor="Top text">
+        <label htmlFor="top text">
           Top text
           <br />
           <input
-            name="Top text"
+            name="top text"
             onChange={(event) => setTopText(event.currentTarget.value)}
           />
         </label>
         <br />
-        <label htmlFor="Bottom text">
+        <label htmlFor="bottom text">
           Bottom text
           <br />
           <input
-            name="Bottom text"
+            name="bottom text"
             onChange={(event) => setBottomText(event.currentTarget.value)}
           />
           <br />
-          <label htmlFor="Meme Template">
+          <label htmlFor="meme template">
             Meme Template
             <br />
             <input
-              name="Meme Template"
+              name="meme template"
               onChange={(event) => setMemeId(event.currentTarget.value)}
             />
           </label>
