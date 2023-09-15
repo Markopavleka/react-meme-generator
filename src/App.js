@@ -1,4 +1,5 @@
 import './app.css';
+import { saveAs } from 'file-saver';
 import { useState } from 'react';
 import { arr } from './template.js';
 
@@ -25,10 +26,16 @@ export default function App() {
       return `${url.slice(0, -4)}/${topText}/${bottomText}.png`;
     }
   };
+
+  const downloadImage = () => {
+    saveAs(imageUrl(), 'meme.jpg');
+  };
+
   return (
     <>
       <div>
         <label htmlFor="top text">Top text</label>
+        <br />
         <input
           name="top text"
           id="top text"
@@ -52,12 +59,9 @@ export default function App() {
         />
       </div>
       <br />
-      <a href={imageUrl()} download>
-        <button>Download</button>
-      </a>
+      <button onClick={downloadImage}>Download</button>
       <br />
       <img data-test-id="meme-image" alt="meme" src={imageUrl()} />
-      <br />
       <br />
     </>
   );
